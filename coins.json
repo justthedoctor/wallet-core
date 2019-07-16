@@ -837,5 +837,26 @@
         "explorer": "https://blockbook.electrum-mona.org/tx/",
         "url": "https://monacoin.org",
         "rpcNodeInfo": "https://github.com/trezor/blockbook"
+    },
+    {
+        "id": "pandacoin",
+        "name": "Pandacoin",
+        "symbol": "PND",
+        "decimals": 8,
+        "blockchain": "Bitcoin",
+        "derivationPath": "m/44'/22'/0'/0/0",
+        "curve": "secp256k1",
+        "publicKeyType": "secp256k1",
+        "p2pkhPrefix": 55,
+        "p2shPrefix": 55,
+        "hrp": "pnd",
+        "publicKeyHasher": "sha256ripemd",
+        "base58Hasher": "sha256d",
+        "xpub": "xpub",
+        "xprv": "xprv",
+        "explorer": "https://chainz.cryptoid.info/pnd/tx.dws?",
+        "url": "https://pandacoin.tech",
+        "rpcNodeInfo": "https://github.com/digitalpandacoin/pandacoin"
+
     }
 ]

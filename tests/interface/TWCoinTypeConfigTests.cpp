@@ -141,6 +141,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetSymbol) {
 
     auto mona = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeMonacoin));
     assertStringsEqual(mona, "MONA");
+
+    auto pnd = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeMonacoin));
+    assertStringsEqual(pnd, "PND");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
@@ -190,6 +193,8 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeAeternity), 18);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeTerra), 6);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeMonacoin), 8);
+    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypePandacoin), 8);
+
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
@@ -335,6 +340,10 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
 
     auto mona = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeMonacoin, txId));
     assertStringsEqual(mona, "https://blockbook.electrum-mona.org/tx/123");
+
+    auto mona = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypePandacoin, txId));
+    assertStringsEqual(mona, "https://chainz.cryptoid.info/pnd/tx.dws?123");
+
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
@@ -472,6 +481,10 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
 
     auto mona = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeMonacoin));
     assertStringsEqual(mona, "monacoin");
+
+    auto mona = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypePandacoin));
+    assertStringsEqual(pnd, "Pandacoin");
+
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
@@ -609,6 +622,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
 
     auto mona = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeMonacoin));
     assertStringsEqual(mona, "Monacoin");
+    
+    auto mona = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypePandacoin));
+    assertStringsEqual(pnd, "Pandacoin");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeBlockchain) {
